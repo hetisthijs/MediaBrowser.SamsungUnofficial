@@ -370,7 +370,7 @@ GuiPlayer.setCurrentTime = function(time) {
 
 			if (this.currentTime + this.offsetSeconds >= endpos) {
 				nextstartpos = this.PlayerDataSubtitle.TrackEvents[this.subtitleShowingIndex+1].StartPositionTicks / 10000;
-				if (nextstartpos >= endpos + 50 || this.subtitleShowingIndex == this.PlayerDataSubtitle.TrackEvents.length) { //to fix flickering subtitles
+				if (nextstartpos >= endpos + 50 || this.subtitleShowingIndex == this.PlayerDataSubtitle.TrackEvents.length-1) { //to fix flickering subtitles
 					document.getElementById("guiPlayer_Subtitles").innerHTML = "";
 				}
 				this.subtitleShowingIndex++;
@@ -834,4 +834,3 @@ GuiPlayer.stopOnAppExit = function() {
 		this.plugin = null;
 	}
 }
-
